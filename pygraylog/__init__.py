@@ -1,2 +1,2 @@
-import endpoints
-import graylogapi
+from . import endpoints
+from . import graylogapi

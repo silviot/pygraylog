@@ -1,7 +1,7 @@
 import base64
 import requests
-from endpoints import endpoints
-from urlparse import urlparse
+from .endpoints import endpoints
+from urllib.parse import urlparse
 
 
 class GraylogAPI(object):
