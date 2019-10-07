@@ -1,5 +1,5 @@
 import pytest
-from pygraylog.pygraylog import graylogapi
+from pygraylog import graylogapi
 
 
 def test_get():

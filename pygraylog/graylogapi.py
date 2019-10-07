@@ -49,8 +49,8 @@ class GraylogAPI(object):
             payload = self.username + ":" + self.password
 
         header = {
-            "Authorization": "Basic " + base64.b64encode(payload),
-            "Accept": "application/json",
+            b"Authorization": b"Basic " + base64.b64encode(payload.encode("ascii")),
+            b"Accept": b"application/json",
         }
         return header
 

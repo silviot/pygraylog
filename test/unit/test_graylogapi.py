@@ -1,6 +1,6 @@
 import pytest
 import base64
-from pygraylog.pygraylog import graylogapi
+from pygraylog import graylogapi
 
 
 def test_obj_creation():
@@ -40,8 +40,8 @@ def test_auth_header():
     header = api.build_auth_header()
     payload = "Zack" + ":" + "Zack"
     header_test = {
-        "Authorization": "Basic " + base64.b64encode(payload),
-        "Accept": "application/json",
+        b"Authorization": b"Basic " + base64.b64encode(payload.encode("ascii")),
+        b"Accept": b"application/json",
     }
     assert header == header_test
 
@@ -50,7 +50,7 @@ def test_auth_header():
     header = api.build_auth_header()
     payload = "ABCDEFG" + ":" + "token"
     header_test = {
-        "Authorization": "Basic " + base64.b64encode(payload),
-        "Accept": "application/json",
+        b"Authorization": b"Basic " + base64.b64encode(payload.encode("ascii")),
+        b"Accept": b"application/json",
     }
     assert header == header_test
